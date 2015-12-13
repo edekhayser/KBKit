@@ -14,8 +14,8 @@
 		2063260D1C1DF0A5001495F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2063260C1C1DF0A5001495F9 /* Assets.xcassets */; };
 		206326101C1DF0A5001495F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2063260E1C1DF0A5001495F9 /* LaunchScreen.storyboard */; };
 		206326181C1DF16B001495F9 /* KBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206326171C1DF16B001495F9 /* KBTableView.swift */; };
-		2063261B1C1DF80F001495F9 /* KBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206326191C1DF80F001495F9 /* KBViewController.swift */; };
 		2063261C1C1DF80F001495F9 /* KBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2063261A1C1DF80F001495F9 /* KBTabBarController.swift */; };
+		2063261E1C1E05F2001495F9 /* KBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2063261D1C1E05F2001495F9 /* KBNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		2063260F1C1DF0A5001495F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		206326111C1DF0A5001495F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206326171C1DF16B001495F9 /* KBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTableView.swift; sourceTree = "<group>"; };
-		206326191C1DF80F001495F9 /* KBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBViewController.swift; sourceTree = "<group>"; };
 		2063261A1C1DF80F001495F9 /* KBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTabBarController.swift; sourceTree = "<group>"; };
+		2063261D1C1E05F2001495F9 /* KBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				206326171C1DF16B001495F9 /* KBTableView.swift */,
-				206326191C1DF80F001495F9 /* KBViewController.swift */,
+				2063261D1C1E05F2001495F9 /* KBNavigationController.swift */,
 				2063261A1C1DF80F001495F9 /* KBTabBarController.swift */,
 				206326021C1DF0A5001495F9 /* KBKit */,
 				206326011C1DF0A5001495F9 /* Products */,
@@ -148,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				206326181C1DF16B001495F9 /* KBTableView.swift in Sources */,
-				2063261B1C1DF80F001495F9 /* KBViewController.swift in Sources */,
 				206326081C1DF0A5001495F9 /* DetailViewController.swift in Sources */,
+				2063261E1C1E05F2001495F9 /* KBNavigationController.swift in Sources */,
 				206326061C1DF0A5001495F9 /* MasterViewController.swift in Sources */,
 				2063261C1C1DF80F001495F9 /* KBTabBarController.swift in Sources */,
 				206326041C1DF0A5001495F9 /* AppDelegate.swift in Sources */,
@@ -302,6 +302,7 @@
 				206326161C1DF0A5001495F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
