@@ -4,7 +4,6 @@ Classes to extend UIKit navigation using key commands.
 This is intended to improve iPad Pro apps by allowed users to do things on-screen using their keyboards.
 
 These are the classes that are currently supported by KBKit:
-[Naming](#naming)
 
 - [UITableView](#kbtableview)
 - [UIViewController](#kbviewcontroller)
