@@ -15,7 +15,7 @@ These are the classes that are currently supported by KBKit:
 
 `⎋` (escape) : allows the user to stop navigating the table view.
 
-`→` and `⏎` : allow the user to select the currently highlighted cell.
+`⏎` : allows the user to select the currently highlighted cell.
 
 KBTableView has an instance variable `methodToCallOnSelection: (NSIndexPath) -> Void`. When the user presses `→` or `⏎` while a cell is selected, this method is called with the index path of the selected cell. From here, you can choose to present a new view controller or perform a segue, for example.
 
@@ -23,7 +23,7 @@ KBTableView can be adopted simply by changing the class of your UITableView inst
 
 ## KBNavigationController
 
-`⌫` and `←` : allow the user to go back in the navigation stack without touching the screen.
+`⌫` and `⌘+←` (command + left arrow) : allow the user to go back in the navigation stack without touching the screen.
 
 KBNavigationController can be adopted by changing the class of your UINavigationController instances to KBNavigationController in Interface Builder or in your code.
 
