@@ -6,7 +6,7 @@ This is intended to improve iPad Pro apps by allowed users to do things on-scree
 These are the classes that are currently supported by KBKit:
 
 - [UITableView](#kbtableview)
-- [UIViewController](#kbviewcontroller)
+- [UINavigationController](#kbnavigationcontroller)
 - [UITabBarController](#kbtabbarcontroller)
 
 ## KBTableView
@@ -19,15 +19,21 @@ These are the classes that are currently supported by KBKit:
 
 KBTableView has an instance variable `methodToCallOnSelection: (NSIndexPath) -> Void`. When the user presses `→` or `⏎` while a cell is selected, this method is called with the index path of the selected cell. From here, you can choose to present a new view controller or perform a segue, for example.
 
-## KBViewController
+KBTableView can be adopted simply by changing the class of your UITableView instances to KBTableView in Interface Builder or in your code.
+
+## KBNavigationController
 
 `⌫` and `←` : allow the user to go back in the navigation stack without touching the screen.
+
+KBNavigationController can be adopted by changing the class of your UINavigationController instances to KBNavigationController in Interface Builder or in your code.
 
 ## KBTabBarController
 
 `⇥` (tab) : allows the user to switch to the next tab.
 
 `⇧+⇥` (shift + tab) : allows the user to switch to the previous tab.
+
+KBTabBarController can be adopted by changing the class of your UITabBarController instances to KBTabBarController in Interface Builder or in your code.
 
 ## Conclusion
 
