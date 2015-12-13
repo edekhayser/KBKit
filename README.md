@@ -5,9 +5,9 @@ This is intended to improve iPad Pro apps by allowed users to do things on-scree
 
 These are the classes that are currently supported by KBKit:
 
-- [UITableView](#kbtableview)
-- [UINavigationController](#kbnavigationcontroller)
-- [UITabBarController](#kbtabbarcontroller)
+- [KBTableView](#kbtableview)
+- [KBNavigationController](#kbnavigationcontroller)
+- [KBTabBarController](#kbtabbarcontroller)
 
 ## KBTableView
 
