@@ -17,9 +17,8 @@ public class KBTableView : UITableView {
         let upCommand = UIKeyCommand(input: UIKeyInputUpArrow, modifierFlags: [], action: "upCommand", discoverabilityTitle: "Move Up")
         let downCommand = UIKeyCommand(input: UIKeyInputDownArrow, modifierFlags: [], action: "downCommand", discoverabilityTitle: "Move Down")
         let returnCommand = UIKeyCommand(input: "\r", modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
-        let rightCommand = UIKeyCommand(input: UIKeyInputRightArrow, modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
         let escCommand = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "escapeCommand", discoverabilityTitle: "Hide Selection")
-        return [upCommand, downCommand, returnCommand, rightCommand, escCommand]
+        return [upCommand, downCommand, returnCommand, escCommand]
     }
     
     @objc private func escapeCommand(){
