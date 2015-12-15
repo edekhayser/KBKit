@@ -18,6 +18,7 @@ public class KBTableView : UITableView {
         let downCommand = UIKeyCommand(input: UIKeyInputDownArrow, modifierFlags: [], action: "downCommand", discoverabilityTitle: "Move Down")
         let returnCommand = UIKeyCommand(input: "\r", modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
         let escCommand = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "escapeCommand", discoverabilityTitle: "Hide Selection")
+        
         return [upCommand, downCommand, returnCommand, escCommand]
     }
     
@@ -82,7 +83,21 @@ public class KBTableView : UITableView {
         currentlySelectedRow = nil
         super.reloadData()
     }
-
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "escapeCommand", name: UITableViewSelectionDidChangeNotification, object: self)
+    }
+    
+    override public init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "escapeCommand", name: UITableViewSelectionDidChangeNotification, object: self)
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 }
 
 private extension UITableView{
