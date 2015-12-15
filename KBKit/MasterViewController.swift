@@ -14,7 +14,24 @@ class MasterViewController: UITableViewController {
 
     override var keyCommands: [UIKeyCommand]?{
         let addCommand = UIKeyCommand(input: "+", modifierFlags: [], action: "insertNewObject:", discoverabilityTitle: "Add")
-        return [addCommand]
+        let editCommand = UIKeyCommand(input: "e", modifierFlags: [.Command], action: "editToggled", discoverabilityTitle: "Edit")
+        return [addCommand, editCommand]
+    }
+    
+    private lazy var methodToCallWhenEditingDisabled: (NSIndexPath) -> Void = { indexPath in
+        self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+        self.performSegueWithIdentifier("showDetail", sender: nil)
+    }
+    
+    private lazy var methodToCallWhenEditingEnabled: (NSIndexPath) -> Void = { indexPath in
+        self.tableView(self.tableView, commitEditingStyle: .Delete, forRowAtIndexPath: indexPath)
+    }
+    
+    func editToggled(){
+        editing = !editing
+        if let tableView = tableView as? KBTableView{
+            tableView.methodToCallOnSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
+        }
     }
     
     override func viewDidLoad() {
@@ -26,10 +43,7 @@ class MasterViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         
         if let tableView = tableView as? KBTableView{
-            tableView.methodToCallOnSelection = { indexPath in
-                tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
-                self.performSegueWithIdentifier("showDetail", sender: nil)
-            }
+            tableView.methodToCallOnSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
         }
     }
 
@@ -52,8 +66,6 @@ class MasterViewController: UITableViewController {
                 let object = objects[indexPath.row] as! NSDate
                 let controller = segue.destinationViewController as! DetailViewController
                 controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -85,6 +97,9 @@ class MasterViewController: UITableViewController {
         if editingStyle == .Delete {
             objects.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            if let tableView = tableView as? KBTableView{
+                tableView.stopHighlighting()
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

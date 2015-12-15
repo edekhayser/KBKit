@@ -22,11 +22,15 @@ public class KBTableView : UITableView {
         return [upCommand, downCommand, returnCommand, escCommand]
     }
     
-    @objc private func escapeCommand(){
+    public func stopHighlighting(){
         if let currentlySelectedRow = currentlySelectedRow, indexPath = indexPathForAbsoluteRow(currentlySelectedRow){
             cellForRowAtIndexPath(indexPath)?.highlighted = false
         }
         currentlySelectedRow = nil
+    }
+    
+    @objc private func escapeCommand(){
+       stopHighlighting()
     }
     
     @objc private func upCommand(){
