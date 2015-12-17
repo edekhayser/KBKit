@@ -66,13 +66,12 @@
 				206326031C1DF0A5001495F9 /* AppDelegate.swift */,
 				206326051C1DF0A5001495F9 /* MasterViewController.swift */,
 				206326071C1DF0A5001495F9 /* DetailViewController.swift */,
-				206326091C1DF0A5001495F9 /* Main.storyboard */,
 				2063260C1C1DF0A5001495F9 /* Assets.xcassets */,
-				2063260E1C1DF0A5001495F9 /* LaunchScreen.storyboard */,
 				206326111C1DF0A5001495F9 /* Info.plist */,
+				2063260E1C1DF0A5001495F9 /* LaunchScreen.storyboard */,
+				206326091C1DF0A5001495F9 /* Main.storyboard */,
 			);
-			name = "KBKit-Example";
-			path = KBKit;
+			path = "KBKit-Example";
 			sourceTree = "<group>";
 		};
 		209AEB191C23541700861514 /* KBKit */ = {
@@ -82,7 +81,7 @@
 				2063261D1C1E05F2001495F9 /* KBNavigationController.swift */,
 				2063261A1C1DF80F001495F9 /* KBTabBarController.swift */,
 			);
-			name = KBKit;
+			path = KBKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +173,7 @@
 				2063260A1C1DF0A5001495F9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		2063260E1C1DF0A5001495F9 /* LaunchScreen.storyboard */ = {
@@ -182,6 +182,7 @@
 				2063260F1C1DF0A5001495F9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -274,7 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = KBKit/Info.plist;
+				INFOPLIST_FILE = "KBKit-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xappox.KBKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,7 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = KBKit/Info.plist;
+				INFOPLIST_FILE = "KBKit-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xappox.KBKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
