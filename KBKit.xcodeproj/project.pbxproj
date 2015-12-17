@@ -46,10 +46,8 @@
 		206325F71C1DF0A5001495F9 = {
 			isa = PBXGroup;
 			children = (
-				206326171C1DF16B001495F9 /* KBTableView.swift */,
-				2063261D1C1E05F2001495F9 /* KBNavigationController.swift */,
-				2063261A1C1DF80F001495F9 /* KBTabBarController.swift */,
-				206326021C1DF0A5001495F9 /* KBKit */,
+				209AEB191C23541700861514 /* KBKit */,
+				206326021C1DF0A5001495F9 /* KBKit-Example */,
 				206326011C1DF0A5001495F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,7 +60,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		206326021C1DF0A5001495F9 /* KBKit */ = {
+		206326021C1DF0A5001495F9 /* KBKit-Example */ = {
 			isa = PBXGroup;
 			children = (
 				206326031C1DF0A5001495F9 /* AppDelegate.swift */,
@@ -73,7 +71,18 @@
 				2063260E1C1DF0A5001495F9 /* LaunchScreen.storyboard */,
 				206326111C1DF0A5001495F9 /* Info.plist */,
 			);
+			name = "KBKit-Example";
 			path = KBKit;
+			sourceTree = "<group>";
+		};
+		209AEB191C23541700861514 /* KBKit */ = {
+			isa = PBXGroup;
+			children = (
+				206326171C1DF16B001495F9 /* KBTableView.swift */,
+				2063261D1C1E05F2001495F9 /* KBNavigationController.swift */,
+				2063261A1C1DF80F001495F9 /* KBTabBarController.swift */,
+			);
+			name = KBKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

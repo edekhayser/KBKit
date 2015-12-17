@@ -10,7 +10,7 @@ import UIKit
 
 public class KBTableView : UITableView {
     
-    var onSelection: (NSIndexPath) -> Void = { _ in }
+    var onSelection: ((NSIndexPath) -> Void)?
     private var currentlySelectedRow: Int?
     
     override public var keyCommands: [UIKeyCommand]?{
@@ -36,7 +36,7 @@ public class KBTableView : UITableView {
     @objc private func upCommand(){
         let previouslySelectedRow = currentlySelectedRow
         if let i = currentlySelectedRow where i != 0{
-            currentlySelectedRow!--
+            currentlySelectedRow = i - 1
         } else {
             currentlySelectedRow = numberOfTotalRows() - 1
         }
@@ -56,7 +56,7 @@ public class KBTableView : UITableView {
     @objc private func downCommand(){
         let previouslySelectedRow = currentlySelectedRow
         if let i = currentlySelectedRow where i != numberOfTotalRows() - 1{
-            currentlySelectedRow!++
+            currentlySelectedRow = i + 1
         } else {
             currentlySelectedRow = 0
         }
@@ -77,7 +77,7 @@ public class KBTableView : UITableView {
     @objc private func returnCommand(){
         guard let currentlySelectedRow = currentlySelectedRow else { return }
         guard let indexPath = indexPathForAbsoluteRow(currentlySelectedRow) else { return }
-        onSelection(indexPath)
+        onSelection?(indexPath)
     }
     
     public override func reloadData() {
@@ -110,9 +110,10 @@ private extension UITableView{
         var currentRow = 0
         for section in 0..<numberOfSections{
             for row in 0..<numberOfRowsInSection(section){
-                if currentRow++ == absoluteRow{
+                if currentRow == absoluteRow{
                     return NSIndexPath(forRow: row, inSection: section)
                 }
+                currentRow += 1
             }
         }
         return nil
