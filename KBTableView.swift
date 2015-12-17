@@ -10,7 +10,7 @@ import UIKit
 
 public class KBTableView : UITableView {
     
-    var methodToCallOnSelection: (NSIndexPath) -> Void = { _ in }
+    var onSelection: (NSIndexPath) -> Void = { _ in }
     private var currentlySelectedRow: Int?
     
     override public var keyCommands: [UIKeyCommand]?{
@@ -77,7 +77,7 @@ public class KBTableView : UITableView {
     @objc private func returnCommand(){
         guard let currentlySelectedRow = currentlySelectedRow else { return }
         guard let indexPath = indexPathForAbsoluteRow(currentlySelectedRow) else { return }
-        methodToCallOnSelection(indexPath)
+        onSelection(indexPath)
     }
     
     public override func reloadData() {

@@ -30,7 +30,7 @@ class MasterViewController: UITableViewController {
     func editToggled(){
         editing = !editing
         if let tableView = tableView as? KBTableView{
-            tableView.methodToCallOnSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
+            tableView.onSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
         }
     }
     
@@ -43,7 +43,7 @@ class MasterViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         
         if let tableView = tableView as? KBTableView{
-            tableView.methodToCallOnSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
+            tableView.onSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
         }
     }
 
