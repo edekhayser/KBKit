@@ -39,4 +39,4 @@ KBTabBarController can be adopted by changing the class of your UITabBarControll
 
 Feel free to contribute other classes to support this project. Revisions and improvements are always welcome.
 
-You can contact me on Twitter at @ERDekhayser.
+You can contact me on Twitter at [@ERDekhayser](https://twitter.com/ERDekhayser).
