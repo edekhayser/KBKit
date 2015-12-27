@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8A737F3FB68F82BB07579D7E85BFA8F066332330",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "8A737F3FB68F82BB07579D7E85BFA8F066332330" : 0,
+    "4B4BAACA98DEB00554F1C47B8448075ADE3181B2" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4DEA44E5-7926-415C-8088-44D0F8D3E938",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "8A737F3FB68F82BB07579D7E85BFA8F066332330" : "KBKit\/",
+    "4B4BAACA98DEB00554F1C47B8448075ADE3181B2" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KBKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KBKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/edekhayser\/UITableView-RowConvenience.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B4BAACA98DEB00554F1C47B8448075ADE3181B2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/edekhayser\/KBKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8A737F3FB68F82BB07579D7E85BFA8F066332330"
+    }
+  ]
+}

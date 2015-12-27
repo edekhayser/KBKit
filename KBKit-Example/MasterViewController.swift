@@ -44,6 +44,12 @@ class MasterViewController: UITableViewController {
         
         if let tableView = tableView as? KBTableView{
             tableView.onSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
+			tableView.onFocus = { current, previous in
+				tableView.cellForRowAtIndexPath(current)?.highlighted = true
+				if let previous = previous{
+					tableView.cellForRowAtIndexPath(previous)?.highlighted = false
+				}
+			}
         }
     }
 

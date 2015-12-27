@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20013A371C309437007E18BC /* UITableView+RowConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20013A361C309437007E18BC /* UITableView+RowConvenience.swift */; };
 		206326041C1DF0A5001495F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206326031C1DF0A5001495F9 /* AppDelegate.swift */; };
 		206326061C1DF0A5001495F9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206326051C1DF0A5001495F9 /* MasterViewController.swift */; };
 		206326081C1DF0A5001495F9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206326071C1DF0A5001495F9 /* DetailViewController.swift */; };
@@ -19,17 +20,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20013A361C309437007E18BC /* UITableView+RowConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RowConvenience.swift"; sourceTree = "<group>"; };
 		206326001C1DF0A5001495F9 /* KBKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		206326031C1DF0A5001495F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		206326051C1DF0A5001495F9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		206326051C1DF0A5001495F9 /* MasterViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		206326071C1DF0A5001495F9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2063260A1C1DF0A5001495F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2063260C1C1DF0A5001495F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2063260F1C1DF0A5001495F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		206326111C1DF0A5001495F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		206326171C1DF16B001495F9 /* KBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTableView.swift; sourceTree = "<group>"; };
-		2063261A1C1DF80F001495F9 /* KBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBTabBarController.swift; sourceTree = "<group>"; };
-		2063261D1C1E05F2001495F9 /* KBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBNavigationController.swift; sourceTree = "<group>"; };
+		206326171C1DF16B001495F9 /* KBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KBTableView.swift; sourceTree = "<group>"; tabWidth = 4; };
+		2063261A1C1DF80F001495F9 /* KBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KBTabBarController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		2063261D1C1E05F2001495F9 /* KBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = KBNavigationController.swift; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				206326171C1DF16B001495F9 /* KBTableView.swift */,
 				2063261D1C1E05F2001495F9 /* KBNavigationController.swift */,
 				2063261A1C1DF80F001495F9 /* KBTabBarController.swift */,
+				20013A361C309437007E18BC /* UITableView+RowConvenience.swift */,
 			);
 			path = KBKit;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20013A371C309437007E18BC /* UITableView+RowConvenience.swift in Sources */,
 				206326181C1DF16B001495F9 /* KBTableView.swift in Sources */,
 				206326081C1DF0A5001495F9 /* DetailViewController.swift in Sources */,
 				2063261E1C1E05F2001495F9 /* KBNavigationController.swift in Sources */,

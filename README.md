@@ -23,15 +23,13 @@ KBTableView can be adopted simply by changing the class of your UITableView inst
 
 ## KBNavigationController
 
-`⌫` and `⌘+←` (command + left arrow) : allow the user to go back in the navigation stack without touching the screen.
+`⌘+←` (command + left arrow) : allow the user to go back in the navigation stack without touching the screen.
 
 KBNavigationController can be adopted by changing the class of your UINavigationController instances to KBNavigationController in Interface Builder or in your code.
 
 ## KBTabBarController
 
-`⇥` (tab) : allows the user to switch to the next tab.
-
-`⇧+⇥` (shift + tab) : allows the user to switch to the previous tab.
+`⌘+1...5` : allows the user to switch to the tab that they choose (supports up to 5 tabs).
 
 KBTabBarController can be adopted by changing the class of your UITabBarController instances to KBTabBarController in Interface Builder or in your code.
 
