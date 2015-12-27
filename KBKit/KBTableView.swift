@@ -11,8 +11,8 @@ import UIKit
 public class KBTableView : UITableView {
 	
 	var onSelection: ((NSIndexPath) -> Void)?
-	var onFocus: ((current: NSIndexPath, previous: NSIndexPath?) -> Void)?
-	private var currentlyFocussedRow: Int?
+	var onFocus: ((current: NSIndexPath?, previous: NSIndexPath?) -> Void)?
+	private var currentlyFocussedIndex: NSIndexPath?
 	
 	override public var keyCommands: [UIKeyCommand]?{
 		let upCommand = UIKeyCommand(input: UIKeyInputUpArrow, modifierFlags: [], action: "upCommand", discoverabilityTitle: "Move Up")
@@ -20,14 +20,16 @@ public class KBTableView : UITableView {
 		let returnCommand = UIKeyCommand(input: "\r", modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
 		let escCommand = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "escapeCommand", discoverabilityTitle: "Hide Selection")
 		
-		return [upCommand, downCommand, returnCommand, escCommand]
+		var commands = [upCommand, downCommand]
+		if let _ = currentlyFocussedIndex{
+			commands += [returnCommand, escCommand]
+		}
+		return commands
 	}
 	
 	public func stopHighlighting(){
-		if let currentlyFocussed = currentlyFocussedRow, indexPath = indexPathForAbsoluteRow(currentlyFocussed){
-			cellForRowAtIndexPath(indexPath)?.highlighted = false
-		}
-		currentlyFocussedRow = nil
+		onFocus?(current: nil, previous: currentlyFocussedIndex)
+		currentlyFocussedIndex = nil
 	}
 	
 	@objc private func escapeCommand(){
@@ -35,59 +37,72 @@ public class KBTableView : UITableView {
 	}
 	
 	@objc private func upCommand(){
-		let previouslyFocussedRow = currentlyFocussedRow
-		if let i = currentlyFocussedRow where i != 0{
-			currentlyFocussedRow = i - 1
-		} else {
-			currentlyFocussedRow = numberOfTotalRows() - 1
+		guard let previouslyFocussedIndex = currentlyFocussedIndex else {
+			currentlyFocussedIndex = indexPathForAbsoluteRow(numberOfTotalRows() - 1)
+			onFocus?(current: currentlyFocussedIndex, previous: nil)
+			return
 		}
-		guard let currentlyFocussedRow = currentlyFocussedRow else { return }
 		
-		let indexPath: NSIndexPath = {
-			if let i = self.indexPathForAbsoluteRow(currentlyFocussedRow){ return i }
-			return NSIndexPath(forRow: self.numberOfRowsInSection(self.numberOfSections - 1), inSection: self.numberOfSections - 1)
-		}()
-		
-		if let previouslyFocussedRow = previouslyFocussedRow{
-			onFocus?(current: indexPath, previous: indexPathForAbsoluteRow(previouslyFocussedRow))
+		if previouslyFocussedIndex.row > 0{
+			currentlyFocussedIndex = NSIndexPath(forRow: previouslyFocussedIndex.row - 1, inSection: previouslyFocussedIndex.section)
+		} else if previouslyFocussedIndex.section > 0{
+			var section = previouslyFocussedIndex.section - 1
+			while section >= 0{
+				if numberOfRowsInSection(section) > 0{
+					break
+				} else {
+					section -= 1
+				}
+			}
+			if section >= 0{
+				currentlyFocussedIndex = NSIndexPath(forRow: numberOfRowsInSection(section) - 1, inSection: section)
+			} else {
+				currentlyFocussedIndex = indexPathForAbsoluteRow(numberOfTotalRows() - 1)
+			}
 		} else {
-			onFocus?(current: indexPath, previous: nil)
+			currentlyFocussedIndex = indexPathForAbsoluteRow(numberOfTotalRows() - 1)
 		}
+		print(currentlyFocussedIndex)
+		onFocus?(current: currentlyFocussedIndex, previous: previouslyFocussedIndex)
 	}
 	
 	@objc private func downCommand(){
-		let previouslyFocussedRow = currentlyFocussedRow
-		if let i = currentlyFocussedRow where i != numberOfTotalRows() - 1{
-			currentlyFocussedRow = i + 1
-		} else {
-			currentlyFocussedRow = 0
+		guard let previouslyFocussedIndex = currentlyFocussedIndex else {
+			currentlyFocussedIndex = indexPathForAbsoluteRow(0)
+			onFocus?(current: currentlyFocussedIndex, previous: nil)
+			return
 		}
 		
-		guard let currentlySelectedRow = currentlyFocussedRow else { return }
-		
-		let indexPath: NSIndexPath = {
-			if let i = self.indexPathForAbsoluteRow(currentlySelectedRow){ return i }
-			return NSIndexPath(forRow: self.numberOfRowsInSection(self.numberOfSections - 1), inSection: self.numberOfSections - 1)
-		}()
-		
-		if let previouslyFocussedRow = previouslyFocussedRow{
-			onFocus?(current: indexPath, previous: indexPathForAbsoluteRow(previouslyFocussedRow))
+		if previouslyFocussedIndex.row < numberOfRowsInSection(previouslyFocussedIndex.section) - 1{
+			currentlyFocussedIndex = NSIndexPath(forRow: previouslyFocussedIndex.row + 1, inSection: previouslyFocussedIndex.section)
+		} else if previouslyFocussedIndex.section < numberOfSections - 1{
+			var section = previouslyFocussedIndex.section + 1
+			while section < numberOfSections{
+				if numberOfRowsInSection(section) > 0{
+					break
+				} else {
+					section += 1
+				}
+			}
+			if section < numberOfSections{
+				currentlyFocussedIndex = NSIndexPath(forRow: 0, inSection: section)
+			} else {
+				currentlyFocussedIndex = indexPathForAbsoluteRow(0)
+			}
 		} else {
-			onFocus?(current: indexPath, previous: nil)
+			currentlyFocussedIndex = indexPathForAbsoluteRow(0)
 		}
+		onFocus?(current: currentlyFocussedIndex, previous: previouslyFocussedIndex)
 	}
 	
 	@objc private func returnCommand(){
-		guard let currentlySelectedRow = currentlyFocussedRow else { return }
-		guard let indexPath = indexPathForAbsoluteRow(currentlySelectedRow) else { return }
-		onSelection?(indexPath)
+		guard let currentlyFocussedIndex = currentlyFocussedIndex else { return }
+		onSelection?(currentlyFocussedIndex)
 	}
 	
 	public override func reloadData() {
-		if let currentlySelectedRow = currentlyFocussedRow, let indexPath = indexPathForAbsoluteRow(currentlySelectedRow){
-			cellForRowAtIndexPath(indexPath)?.highlighted = false
-		}
-		currentlyFocussedRow = nil
+		onFocus?(current: currentlyFocussedIndex, previous: nil)
+		currentlyFocussedIndex = nil
 		super.reloadData()
 	}
 	

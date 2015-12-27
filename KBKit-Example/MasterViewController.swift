@@ -45,7 +45,9 @@ class MasterViewController: UITableViewController {
         if let tableView = tableView as? KBTableView{
             tableView.onSelection = editing ? methodToCallWhenEditingEnabled : methodToCallWhenEditingDisabled
 			tableView.onFocus = { current, previous in
-				tableView.cellForRowAtIndexPath(current)?.highlighted = true
+				if let current = current{
+					tableView.cellForRowAtIndexPath(current)?.highlighted = true
+				}
 				if let previous = previous{
 					tableView.cellForRowAtIndexPath(previous)?.highlighted = false
 				}
@@ -60,9 +62,8 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(sender: AnyObject) {
         objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
+		self.tableView.reloadData()
+	}
 
     // MARK: - Segues
 
@@ -79,7 +80,7 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

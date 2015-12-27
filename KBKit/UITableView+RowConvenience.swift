@@ -35,7 +35,11 @@ public extension UITableView{
 	}
 	
 	public func numberOfTotalRows() -> Int{
-		return Array(0..<numberOfSections).reduce(0, combine: { (sum, section) in numberOfRowsInSection(section) })
+		var total = 0
+		for section in 0..<numberOfSections{
+			total += numberOfRowsInSection(section)
+		}
+		return total
 	}
 	
 }
