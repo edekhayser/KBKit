@@ -15,7 +15,6 @@ public class KBTableView : UITableView {
 	private var currentlyFocussedIndex: NSIndexPath?
 	
 	override public var keyCommands: [UIKeyCommand]?{
-		guard numberOfTotalRows() != 0 else { return nil }
 		let upCommand = UIKeyCommand(input: UIKeyInputUpArrow, modifierFlags: [], action: "upCommand", discoverabilityTitle: "Move Up")
 		let downCommand = UIKeyCommand(input: UIKeyInputDownArrow, modifierFlags: [], action: "downCommand", discoverabilityTitle: "Move Down")
 		let returnCommand = UIKeyCommand(input: "\r", modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
