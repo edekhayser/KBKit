@@ -62,7 +62,6 @@ public class KBTableView : UITableView {
 		} else {
 			currentlyFocussedIndex = indexPathForAbsoluteRow(numberOfTotalRows() - 1)
 		}
-		print(currentlyFocussedIndex)
 		onFocus?(current: currentlyFocussedIndex, previous: previouslyFocussedIndex)
 	}
 	
