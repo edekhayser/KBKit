@@ -47,5 +47,9 @@ public class KBTabBarController: UITabBarController {
 	@objc private func fiveCommand(){
 		selectedIndex = 4
 	}
+	
+	public override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
 
 }

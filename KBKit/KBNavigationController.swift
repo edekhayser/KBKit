@@ -19,5 +19,9 @@ public class KBNavigationController: UINavigationController {
     @objc private func backCommand(){
         popViewControllerAnimated(true)
     }
+	
+	public override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
 
 }
