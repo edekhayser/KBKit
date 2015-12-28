@@ -119,5 +119,9 @@ public class KBTableView : UITableView {
 		NSNotificationCenter.defaultCenter().removeObserver(self)
 	}
 	
+	public override func canBecomeFirstResponder() -> Bool {
+		return true
+	}
+	
 }
 
