@@ -9,7 +9,7 @@ These are the classes that are currently supported by KBKit:
 - [KBNavigationController](#kbnavigationcontroller)
 - [KBTabBarController](#kbtabbarcontroller)
 
-## KBTableView
+## [KBTableView](https://github.com/edekhayser/KBKit/blob/master/KBKit/KBTableView.swift)
 
 `↑` and `↓` : allow the user to navigate up and down the table view.
 
@@ -21,13 +21,13 @@ KBTableView has a property declared as `onSelection: (NSIndexPath) -> Void`. Whe
 
 KBTableView can be adopted simply by changing the class of your UITableView instances to KBTableView in Interface Builder or in your code.
 
-## KBNavigationController
+## [KBNavigationController](https://github.com/edekhayser/KBKit/blob/master/KBKit/KBNavigationController.swift)
 
 `⌘+←` (command + left arrow) : allow the user to go back in the navigation stack without touching the screen.
 
 KBNavigationController can be adopted by changing the class of your UINavigationController instances to KBNavigationController in Interface Builder or in your code.
 
-## KBTabBarController
+## [KBTabBarController](https://github.com/edekhayser/KBKit/blob/master/KBKit/KBTabBarController.swift)
 
 `⌘+1...5` : allows the user to switch to the tab that they choose (supports up to 5 tabs).
 
