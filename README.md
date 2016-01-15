@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/edekhayser/KBKit/master/KBKit%20Logo.png)
 
-Classes to extend UIKit navigation using key commands.
+KBKit is a set of classes that extend UIKit navigation using key commands.
 
 This is intended to improve iPad Pro apps by allowed users to do things on-screen using their keyboards.
 
