@@ -1,5 +1,3 @@
-# KBKit
-
 ![Logo](https://raw.githubusercontent.com/edekhayser/KBKit/master/KBKit%20Logo.png)
 
 Classes to extend UIKit navigation using key commands.
