@@ -53,6 +53,7 @@ class MasterViewController: UITableViewController {
 				}
 			}
         }
+        tableView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
