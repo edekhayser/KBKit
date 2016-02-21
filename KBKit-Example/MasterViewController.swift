@@ -55,6 +55,11 @@ class MasterViewController: UITableViewController {
         }
         tableView.becomeFirstResponder()
     }
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		tableView.becomeFirstResponder()
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

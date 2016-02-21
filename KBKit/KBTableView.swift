@@ -18,11 +18,12 @@ public class KBTableView : UITableView {
 		let upCommand = UIKeyCommand(input: UIKeyInputUpArrow, modifierFlags: [], action: "upCommand", discoverabilityTitle: "Move Up")
 		let downCommand = UIKeyCommand(input: UIKeyInputDownArrow, modifierFlags: [], action: "downCommand", discoverabilityTitle: "Move Down")
 		let returnCommand = UIKeyCommand(input: "\r", modifierFlags: [], action: "returnCommand", discoverabilityTitle: "Enter")
-		let escCommand = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "escapeCommand", discoverabilityTitle: "Hide Selection")
+		let escCommand = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "escapeCommand", discoverabilityTitle: "Deselect")
+		let otherEscCommand = UIKeyCommand(input: "d", modifierFlags: [.Command], action: "escapeCommand", discoverabilityTitle: "Deselect")
 		
 		var commands = [upCommand, downCommand]
 		if let _ = currentlyFocussedIndex{
-			commands += [returnCommand, escCommand]
+			commands += [returnCommand, escCommand, otherEscCommand]
 		}
 		return commands
 	}
